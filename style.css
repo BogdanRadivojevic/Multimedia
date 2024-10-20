@@ -1,0 +1,300 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+    overflow-x: hidden;
+}
+/* HERO SECTION*/
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.container{
+    min-width: 1350px;
+    padding: 10px;
+}
+
+
+/* NAVBAR */
+.navbar {
+    background-color: transparent;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.navbar .navbar-brand img.logo {
+    width: 174px;
+    height: 100px;
+}
+
+.navbar-nav .nav-link {
+    margin: 0 10px;
+    font-weight: normal;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #237BE7;
+    text-decoration: underline;
+}
+
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    background-color: #237BE7;
+    border-color: #237BE7;
+}
+
+.hero .btn:hover {
+    background-color: #105ab2;
+    border-color: #105ab2;
+}
+
+
+/* MULTIMEDIA SECTION */
+.multimedia-sections {
+    background-image: url('Slike/Pozadina1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 90px 0;
+    color: white;
+}
+
+.multimedia-card .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 2px solid #237BE7;
+    min-width: 420px;
+    min-height: 380px;
+    
+}
+
+.multimedia-card .card-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+}
+
+.multimedia-card h3 {
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.multimedia-card p {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 32px;
+}
+
+.multimedia-card .btn {
+    background-color: #237BE7;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.multimedia-card .btn:hover {
+    background-color: #105ab2;
+}
+
+
+/* JAVASCRIPT EXPLANATION SECTION */
+.javascript-explanation {
+    background-image: url('Slike/Pozadina2.png');
+    background-size: cover;
+    background-position: centar;
+    background-repeat: no-repeat;
+    padding: 90px 0;
+    color: white;
+    
+}
+
+.explanation-content {
+    background-color: #111;
+    border: 2px solid #237BE7; 
+    border-radius: 20px;
+    padding: 30px;
+    color: #fff;
+    text-align: left; 
+}
+
+.explanation-content h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.explanation-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.explanation-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; /* Zaobljeni uglovi slike */
+}
+
+
+/* DOCUMENTATION SECTION */
+.documentation-section {
+    background-image: url('Slike/Pozadina3.png');
+    background-size: cover;
+    background-position: centar;
+    background-repeat: no-repeat;
+    padding: 200px 0;
+    color: white;
+}
+
+.download-section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #111;
+    border: 2px solid #237BE7; 
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.download-section .btn {
+    background-color: #237BE7;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Tekst i slika sa leve strane */
+    gap: 170px; /* Razmak između slike i teksta */
+}
+
+.download-section .button-icon {
+    width: 24px; /* Veličina ikonice */
+    height: auto;
+}
+
+.download-section .btn i {
+    margin-right: 10px;
+}
+
+.resources-description {
+    background-color: #111;
+    border: 2px solid #237BE7; 
+    border-radius: 20px;
+    padding: 40px;
+    max-height: 357px;
+}
+
+.resources-description h3 {
+    font-family: 'Righteous', cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.resources-description p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 38px;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #111;
+    padding: 40px 0;
+    color: white;
+}
+
+.footer-logo{
+    width: 174px;
+    height: 100px;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin-left: 120px;
+}
+
+.footer-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+.download-section .btn:hover {
+    background-color: #105ab2;
+}
+
+.footer-download-section .btn {
+    background-color: #237BE7;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px; 
+    margin-bottom: 50px;
+}
+
+.footer-download-section .button-icon {
+    width: 24px; /* Veličina ikonice */
+    height: auto;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+
+  

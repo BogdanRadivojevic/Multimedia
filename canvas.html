@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas in JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lekcije.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="Slike/transparent logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="audio.html">Audio</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="animacija.html">Animacija</a></li>
+                <li class="nav-item"><a class="nav-link" href="youtube.html">YouTube Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="3d.html">3D Grafika</a></li>
+                <li class="nav-item"><a class="nav-link" href="test.html">Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero/Naslov -->
+    <header class="header-section">
+        <canvas id="myCanvas"></canvas> 
+        <div class="wave-shape"></div>
+        <div class="container">
+            <h1>Audio in JavaScript</h1>
+            <p>Otkrij kako JavaScript omogućava neprimetnu integraciju audio i video sadržaja u veb aplikacijama.</p>
+            <button class="btn btn-primary" onclick="scrollToSection()">Započni</button>
+        </div>
+    </header>
+
+
+<!-- Content Section -->
+<section class="content-section" id="audio-usage"> 
+    <div class="container">
+        <h2>Zašto Koristiti Audio u JavaScript-u?</h2>
+        <div class="content-box">
+            <h4>Prednosti i Upotreba Audija u JavaScript-u</h3>
+            <br>
+            <p>JavaScript nudi snažne alate za rad sa zvukom putem HTML5 audio elemenata i Web Audio API-ja. Evo nekoliko glavnih razloga zašto se koristi:</p>
+            <p>Kontrola reprodukcije: JavaScript ti omogućava da kontrolišeš reprodukciju audio zapisa, uključujući funkcije kao što su play, pauza, zaustavljanje, promena jačine zvuka, i navigacija kroz audio fajl.</p>
+            <p>Interaktivnost: Možeš dodavati audio efekte koji reaguju na korisničke akcije ili događaje na stranici, što povećava angažovanost korisnika.</p>
+            <p>Integracija u igre i aplikacije: U JavaScript-u je lako dodavati zvukove u igrice ili aplikacije kako bi se poboljšalo korisničko iskustvo, npr. zvučni efekti ili muzička podloga.</p>
+            <p>Web Audio API: Omogućava naprednu manipulaciju zvukom, uključujući stvaranje dinamičkih zvučnih efekata, filtriranje, i kontrolu višekanalnih audio signala. Takođe je moguće analizirati zvučne talase u realnom vremenu.</p>
+            <p>Prednosti:</p>
+            <p>Multiplatformska podrška: JavaScript radi u svim modernim pretraživačima, pa je integracija zvuka dostupna na svim uređajima.</p>
+            <p>Laka upotreba: Rad sa audio elementima putem JavaScript-a je relativno jednostavan i ne zahteva dodatne biblioteke.</p>
+            <p>Velika fleksibilnost: Moguće je implementirati razne funkcionalnosti, od osnovnog puštanja pesme do kompleksne audio obrade.</p>
+            <p>Mane:</p>
+            <p>Ograničena podrška za formate: Ne podržavaju svi pretraživači iste formate, pa je neophodno koristiti različite formate (kao što su MP3, Ogg) kako bi se osigurala kompatibilnost.</p>
+            <p>Zavisnost od pretraživača: Performanse mogu zavisiti od pretraživača i hardvera na kojem se aplikacija izvršava.</p>   
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Examples Section -->
+<section class="interactive-examples">
+    <div class="container">
+        <h2>Interaktivni Primeri</h2>
+        <p>See JavaScript in action with audio control.</p>
+        
+        <div class="row">
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>primer 1</small>
+                    <h3>Naziv primera</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <h3>ZADATAK/PRIMER</h3>
+                </div>
+            </div>
+
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <h3>ZADATAK/PRIMER</h3>
+                </div>
+            </div>
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>primer 1</small>
+                    <h3>Naziv primera</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>primer 1</small>
+                    <h3>Naziv primera</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <h3>ZADATAK/PRIMER</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="download-section">
+                     <img src="Slike/transparent logo.png" alt="Logo" class="logo">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="footer-links">
+                    <li><h3>Linkovi</h3></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="audio.html">Audio</a></li>
+                    <li><a href="video.html">Audio</a></li>
+                    <li><a href="canvas.html">Canvas API</a></li>
+                    <li><a href="animacija.html">Animacije</a></li>
+                    <li><a href="youtube.html">YouTube Video</a></li>
+                    <li><a href="3d.html">3D Grafika</a></li>
+                    <li><a href="test.html">Test</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-download-section">
+                    <a href="Slike/dokument1.pdf" download class="btn btn-primary">
+                        <img src="Slike/pdf.png" alt="PDF Icon" class="button-icon"> Preuzmi Dokument
+                    </a>
+                    <a href="Slike/dokument2.pptx" download class="btn btn-primary">
+                        <img src="Slike/powerpoint.png" alt="PowerPoint Icon" class="button-icon"> Preuzmi Dokument
+                    </a>
+                    <a href="Slike/dokument3.docx" download class="btn btn-primary">
+                        <img src="Slike/word.png" alt="Word Icon" class="button-icon"> Preuzmi Dokument
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; Copyright 2024 Protect My Work, Limited. All Rights Reserved.</p>
+    </div>
+</footer>
+        
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="HeroZvezde.js"></script>
+    <script src="dugme.js"></script>
+</body>
+</html>
