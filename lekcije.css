@@ -271,3 +271,86 @@ body {
     border-radius: 20px;
     padding: 40px;
 }
+
+/* Button Animations */
+.animated-button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background-color: #237be7;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .animated-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  .animated-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .animated-button:hover {
+    background-color: #1b61c0; /* Darker blue on hover */
+    color: #ffffff;
+    box-shadow: 0 8px 15px rgba(35, 123, 231, 0.6);
+  }
+  
+  .animated-button:active {
+    transform: translateY(2px); /* Button press effect */
+  }
+  .dugme {
+    margin-top: 20px;
+    background-color: #237be7;
+    border-color: #237be7;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.25rem;
+    /* border-radius: 30px; */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    box-shadow: 0 5px 15px rgba(35, 123, 231, 0.4); /* Add shadow for depth */
+  }
+  
+  .hero .dugme:hover {
+    transform: scale(1.1); /* Button grows slightly */
+    background-color: #1a65b4; /* Darken the background color on hover */
+  }
+  
+  .hero .dugme:active {
+    transform: scale(0.95); /* Slight shrink when clicked */
+  }
+  
+  /* Adding a subtle animation */
+  .hero .dugme {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

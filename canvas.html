@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas in JavaScript</title>
+    <title>Canvas u JavaScript</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="lekcije.css">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -85,21 +85,17 @@
             </div>
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <h3>Primer 1: Crtanje Kruga</h3>
+                    <canvas id="circleCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+                    <button class="btn btn-primary" onclick="drawCircle()">Crtaj Krug</button>
                 </div>
             </div>
 
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
-            </div>
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <h3>Primer 2: Animacija Kvadrata</h3>
+                    <canvas id="squareCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+                    <button class="btn btn-primary" onclick="animateSquare()">Animiraj Kvadrat</button>
                 </div>
             </div>
 
@@ -111,9 +107,20 @@
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
+
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>primer 1</small>
+                    <h3>Naziv primera</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <h3>Primer 3: Promena Boje</h3>
+                    <canvas id="colorCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+                    <button class="btn btn-primary" onclick="changeColor()">Promeni Boju</button>
                 </div>
             </div>
         </div>
@@ -169,6 +176,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="HeroZvezde.js"></script>
+    <script src="js/canvas.js   "></script>
     <script src="dugme.js"></script>
 </body>
 </html>
