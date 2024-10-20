@@ -184,4 +184,36 @@ function onMouseLeave() {
 }
 
 
+// navbar effect
+// Wait for the DOM to load
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Get all nav-link elements
+//   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
+//   // Function to remove the 'active-nav' class from all links
+//   function removeActiveClass() {
+//       navLinks.forEach(link => {
+//           link.classList.remove('active-nav');
+//       });
+//   }
+
+//   // Add a click event listener to each link
+//   navLinks.forEach(link => {
+//       link.addEventListener('click', function () {
+//           // Remove the 'active-nav' class from all links
+//           removeActiveClass();
+
+//           // Add the 'active-nav' class to the clicked link
+//           this.classList.add('active-nav');
+//       });
+//   });
+
+//   // Optionally, you can highlight the active link based on the current URL
+//   // This will ensure the correct nav link is highlighted when the page loads
+//   const currentPath = window.location.pathname.split("/").pop();
+//   navLinks.forEach(link => {
+//       if (link.getAttribute('href') === currentPath) {
+//           link.classList.add('active-nav');
+//       }
+//   });
+// });

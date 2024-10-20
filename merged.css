@@ -13,15 +13,12 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO SECTION*/
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+.bodyNew {
+  background-color: #111;
+  color: #fff;
 }
+
+/* Container */
 .container {
   min-width: 1350px;
   padding: 10px;
@@ -50,35 +47,80 @@ canvas {
 }
 
 .active-nav {
-    background-color: #f8f9fa;
-    color: #007bff;
-    border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #007bff;
+  border-radius: 5px;
 }
 
 /* HERO SECTION */
-.hero {
+.hero,
+.header-section {
   height: 100vh;
   color: white;
   font-family: "Roboto", sans-serif;
   z-index: 10;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero h1 {
+.header-section {
+  background-image: url("Slike/Pozadina4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-section canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero h1,
+.header-section h1 {
   font-family: "Righteous", cursive;
   font-size: 4rem;
   font-weight: bold;
 }
 
-.hero p {
+.header-section h1 {
+  font-size: 5rem;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.hero p,
+.header-section p {
   font-size: 1.25rem;
   margin-top: 10px;
   font-family: "Roboto", sans-serif;
+  margin: 20px 0;
 }
 
-.hero .btn {
+.hero .btn,
+.header-section .btn-primary {
   margin-top: 20px;
   background-color: #237be7;
   border-color: #237be7;
+}
+
+.header-section .btn-primary {
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.header-section .btn-primary:hover {
+  background-color: #0056b3;
+  color: #fff;
 }
 
 .hero .btn:hover {
@@ -143,7 +185,7 @@ canvas {
 .javascript-explanation {
   background-image: url("Slike/Pozadina2.png");
   background-size: cover;
-  background-position: centar;
+  background-position: center;
   background-repeat: no-repeat;
   padding: 90px 0;
   color: white;
@@ -173,14 +215,14 @@ canvas {
 .explanation-image {
   width: 100%;
   height: 100%;
-  border-radius: 20px; /* Zaobljeni uglovi slike */
+  border-radius: 20px;
 }
 
 /* DOCUMENTATION SECTION */
 .documentation-section {
   background-image: url("Slike/Pozadina3.png");
   background-size: cover;
-  background-position: centar;
+  background-position: center;
   background-repeat: no-repeat;
   padding: 200px 0;
   color: white;
@@ -203,12 +245,12 @@ canvas {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Tekst i slika sa leve strane */
-  gap: 170px; /* Razmak između slike i teksta */
+  justify-content: flex-start;
+  gap: 170px;
 }
 
 .download-section .button-icon {
-  width: 24px; /* Veličina ikonice */
+  width: 24px;
   height: auto;
 }
 
@@ -247,6 +289,7 @@ canvas {
   width: 174px;
   height: 100px;
 }
+
 .footer-links {
   list-style: none;
   padding: 0;
@@ -270,10 +313,6 @@ canvas {
   text-decoration: underline;
 }
 
-.download-section .btn:hover {
-  background-color: #105ab2;
-}
-
 .footer-download-section .btn {
   background-color: #237be7;
   border-radius: 10px;
@@ -287,7 +326,7 @@ canvas {
 }
 
 .footer-download-section .button-icon {
-  width: 24px; /* Veličina ikonice */
+  width: 24px;
   height: auto;
 }
 
@@ -336,49 +375,5 @@ canvas {
 }
 
 .animated-button:hover {
-  background-color: #1b61c0; /* Darker blue on hover */
-  color: #ffffff;
-  box-shadow: 0 8px 15px rgba(35, 123, 231, 0.6);
+  background-color: #1b61c0; /* Darker shade on hover */
 }
-
-.animated-button:active {
-  transform: translateY(2px); /* Button press effect */
-}
-.dugme {
-  margin-top: 20px;
-  background-color: #237be7;
-  border-color: #237be7;
-  color: white;
-  padding: 12px 30px;
-  font-size: 1.25rem;
-  /* border-radius: 30px; */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
-  box-shadow: 0 5px 15px rgba(35, 123, 231, 0.4); /* Add shadow for depth */
-}
-
-.hero .dugme:hover {
-  transform: scale(1.1); /* Button grows slightly */
-  background-color: #1a65b4; /* Darken the background color on hover */
-}
-
-.hero .dugme:active {
-  transform: scale(0.95); /* Slight shrink when clicked */
-}
-
-/* Adding a subtle animation */
-.hero .dugme {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
