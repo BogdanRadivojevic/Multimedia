@@ -71,54 +71,160 @@
 <!-- Interactive Examples Section -->
 <section class="interactive-examples">
     <div class="container">
-        <h2>Interaktivni Primeri</h2>
-        <p>See JavaScript in action with audio control.</p>
-        
-        <div class="row">
+        <!-- Prvi primer -->
+        <div class="row mb-4">
+            <!-- Prva kolona: opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <small>Primer 1</small>
+                    <h3>Dodavanje audio fajla u HTML uz JavaScript kontrolu</h3>
+                    <p>Ovaj primer prikazuje kako možete da dodate audio fajl na vašu web stranicu i kontrolišete ga pomoću JavaScript-a. Možete da koristite Play/Pause dugmad da kontrolišete zvuk.</p>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#imageModal1">Prikaži kod</button>
                 </div>
             </div>
+    
+            <!-- Druga kolona: zadatak ili primer -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <p>Dodaj audio element u HTML, poveži ga sa JavaScript funkcijama za reprodukciju i pauzu.</p>
+                    <audio id="myAudio">
+                        <source src="Slike/audio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br>
+                    <button onclick="playAudio()" class="btn btn-success">Play</button>
+                    <button onclick="pauseAudio()" class="btn btn-danger">Pause</button>
+                    <script>
+                        var audio = document.getElementById("myAudio");
+                        function playAudio() {
+                            audio.play();
+                        }
+                        function pauseAudio() {
+                            audio.pause();
+                        }
+                    </script>
                 </div>
             </div>
-
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
-            </div>
+        </div>
+    
+        <!-- Drugi primer -->
+        <div class="row mb-4">
+            <!-- Prva kolona: opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <small>Primer 2</small>
+                    <h3>Kontrolisanje jačine zvuka u JavaScript-u</h3>
+                    <p>Ovaj primer prikazuje kako možete da kontrolišete jačinu zvuka vašeg audio elementa pomoću JavaScript-a.</p>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#imageModal2">Prikaži kod</button>
                 </div>
             </div>
-
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
+    
+            <!-- Druga kolona: zadatak ili primer -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <p>Dodaj slider za kontrolu jačine zvuka audio fajla pomoću <code>volume</code> atributa u JavaScript-u.</p>
+                    <audio id="myAudio2">
+                        <source src="Slike/audio.mp33" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br>
+                    <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
+                    <script>
+                        var audio2 = document.getElementById("myAudio2");
+                        function setVolume(volume) {
+                            audio2.volume = volume;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Treci primer -->
+        <div class="row mb-4">
+            <!-- Prva kolona: opis primera -->
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>Primer 3</small>
+                    <h3>Provera završetka audio fajla</h3>
+                    <p>U ovom primeru, koristićemo JavaScript da proverimo kada se audio fajl završi i izvršimo određenu akciju, kao što je ispis poruke.</p>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#imageModal3">Prikaži kod</button>
+                </div>
+            </div>
+    
+            <!-- Druga kolona: zadatak ili primer -->
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <p>Koristi <code>ended</code> događaj u JavaScript-u da detektuje kada audio fajl završi i prikaže poruku.</p>
+                    <audio id="myAudio3">
+                        <source src="Slike/audio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br>
+                    <button onclick="playAudio3()" class="btn btn-success">Play</button>
+                    <p id="status"></p>
+                    <script>
+                        var audio3 = document.getElementById("myAudio3");
+                        function playAudio3() {
+                            audio3.play();
+                            audio3.onended = function() {
+                                document.getElementById("status").innerText = "Audio fajl je završen!";
+                            };
+                        }
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modali za slike -->
+<div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModal1Label">Kod za Primer 1</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="Slike/AudioPrimer1.png" alt="Kod za Primer 1" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModal2Label">Kod za Primer 2</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="Slike/AudioPrimer2.png" alt="Kod za Primer 2" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModal3Label">Kod za Primer 3</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="Slike/AudioPrimer3.png" alt="Kod za Primer 3" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Footer Section -->
 <footer class="footer">
