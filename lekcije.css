@@ -191,6 +191,18 @@ body {
 }
 
 .placeholder-content {
+    min-height: 200px;
+    background-color: #000000;
+    padding: 20px;
+    border: 1px solid #237BE7;
+    border-radius: 20px;
+   
+}
+
+.placeholder-contentt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 200px;
     background-color: #000000;
     padding: 20px;

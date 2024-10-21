@@ -71,54 +71,174 @@
 <!-- Interactive Examples Section -->
 <section class="interactive-examples">
     <div class="container">
-        <h2>Interaktivni Primeri</h2>
-        <p>See JavaScript in action with video control.</p>
+        <!-- Prvi primer -->
+        <div class="row mb-4">
+            <!-- Prva kolona: opis primera -->
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>Primer 1</small>
+                    <h3>Reprodukcija videa unazad</h3>
+                    <p>Ovaj primer prikazuje kako možete da reprodukujete video unazad pomoću JavaScript-a, postepeno smanjujući trenutni vremenski kod.</p>
+                </div>
+            </div>
         
-        <div class="row">
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
+            <!-- Druga kolona: zadatak ili primer -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <p>Kliknite dugme da biste video pustili unazad.</p>
+                    <video id="reverseVideo" width="320" height="240" controls>
+                        <source src="Slike/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <br>
+                    <button onclick="playReverse()" class="btn btn-warning">Rewind</button>
+                    <script>
+                        var reverseVideo = document.getElementById("reverseVideo");
+                        var rewindInterval;
+        
+                        function playReverse() {
+                            if (!reverseVideo.paused) {
+                                clearInterval(rewindInterval);
+                                reverseVideo.pause();
+                                return;
+                            }
+                            rewindInterval = setInterval(function() {
+                                if (reverseVideo.currentTime <= 0) {
+                                    clearInterval(rewindInterval);
+                                } else {
+                                    reverseVideo.currentTime -= 0.1;
+                                }
+                            }, 100);
+                        }
+                    </script>
                 </div>
             </div>
-
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
-            </div>
+        </div>
+    
+        <!-- Drugi primer -->
+        <div class="row mb-4">
+            <!-- Prva kolona: opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <small>Primer 2</small>
+                    <h3>Primena filtera na video u realnom vremenu</h3>
+                    <p>Ovde možete da primenjujete različite vizuelne filtere na video u realnom vremenu koristeći JavaScript i CSS.</p>
                 </div>
             </div>
-
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
+        
+            <!-- Druga kolona: zadatak ili primer -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <p>Podesite filtere videa pomoću slidera.</p>
+                    <video id="filterVideo" width="320" height="240" controls>
+                        <source src="Slike/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <br>
+                    <label>Brightness: </label>
+                    <input type="range" min="0" max="2" step="0.1" value="1" onchange="applyFilters()">
+                    <label>Contrast: </label>
+                    <input type="range" min="0" max="2" step="0.1" value="1" onchange="applyFilters()">
+                    <label>Saturate: </label>
+                    <input type="range" min="0" max="2" step="0.1" value="1" onchange="applyFilters()">
+                    <script>
+                        var filterVideo = document.getElementById("filterVideo");
+                        var inputs = document.querySelectorAll("input[type=range]");
+        
+                        function applyFilters() {
+                            var brightness = inputs[0].value;
+                            var contrast = inputs[1].value;
+                            var saturate = inputs[2].value;
+                            filterVideo.style.filter = `brightness(${brightness}) contrast(${contrast}) saturate(${saturate})`;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Treci primer -->
+        <div class="row mb-4">
+            <!-- Prva kolona: opis primera -->
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>Primer 3</small>
+                    <h3>Preskoči uvod u video</h3>
+                    <p>Ovaj primer prikazuje kako korisnici mogu preskočiti uvodni deo videa koristeći JavaScript funkcionalnost "preskoči uvod".</p>
+                </div>
+            </div>
+        
+            <!-- Druga kolona: zadatak ili primer -->
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <p>Kliknite dugme da preskočite uvod.</p>
+                    <video id="skipIntroVideo" width="320" height="240" controls>
+                        <source src="Slike/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <br>
+                    <button onclick="skipIntro()" class="btn btn-info">Skip Intro</button>
+                    <script>
+                        var skipIntroVideo = document.getElementById("skipIntroVideo");
+        
+                        function skipIntro() {
+                            skipIntroVideo.currentTime = 10; // Preskače prvih 10 sekundi
+                            skipIntroVideo.play();
+                        }
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modali za slike -->
+<div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModal1Label">Kod za Primer 1</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="Slike/VideoPrimer1.png" alt="Kod za Primer 1" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModal2Label">Kod za Primer 2</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="Slike/VideoPrimer2.png" alt="Kod za Primer 2" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModal3Label">Kod za Primer 3</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="Slike/VideoPrimer3.png" alt="Kod za Primer 3" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Footer Section -->
 <footer class="footer">
