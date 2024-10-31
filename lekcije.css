@@ -1,5 +1,8 @@
 body {
-    background-color: #111;
+    background-image: url('Slike/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
     margin: 0; /* Uklanja podrazumevani margin */
 }
@@ -42,10 +45,6 @@ body {
     height: 100vh; /* Postavlja visinu na 100% visine prozora */
     position: relative; /* Omogućava pozicioniranje sadržaja */
     overflow: hidden; /* Osigurava da sadržaj ne izlazi iz okvira */
-    background-image: url('Slike/Pozadina4.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 0; /* Uklanja padding */
     display: flex; /* Koristi flex za centriranje */
     flex-direction: column; /* Vertikalno centriranje */
@@ -102,10 +101,6 @@ body {
 }
 
 .content-section {
-    background-image: url('Slike/Pozadina5.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 90px 0;
     text-align: center;
 }
@@ -132,10 +127,6 @@ body {
 
 /* INTERACTIVE SECTION */
 .interactive-examples {
-    background-image: url('Slike/Pozadina5.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: #fff;
     padding: 90px 0;
     text-align: center;
