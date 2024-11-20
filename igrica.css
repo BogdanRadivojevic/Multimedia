@@ -1,0 +1,233 @@
+ /* NAVBAR */
+.navbar {
+    background-color: transparent;
+    padding: 1rem;
+
+}
+
+.navbar .navbar-brand img.logo {
+    width: 174px;
+    height: 100px;
+}
+
+.navbar-nav .nav-link {
+    margin: 0 10px;
+    font-weight: normal;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #237BE7 !important;
+    text-decoration: underline;
+}
+
+.navbar-nav .nav-link.active {
+    color: #237BE7 !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+ 
+ /* Footer Section */
+.footer {
+    background-color: #111;
+    padding: 40px 0;
+    color: white;
+}
+
+.footer-logo{
+    width: 174px;
+    height: 100px;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin-left: 120px;
+}
+
+.footer-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+.download-section .btn:hover {
+    background-color: #105ab2;
+}
+
+.footer-download-section .btn {
+    background-color: #237BE7;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px; 
+    margin-bottom: 50px;
+}
+
+.footer-download-section .button-icon {
+    width: 24px; /* Veličina ikonice */
+    height: auto;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.download-section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #111;
+    border: 2px solid #237BE7; 
+    border-radius: 20px;
+    padding: 40px;
+}
+
+/* Button Animations */
+.animated-button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background-color: #237be7;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .animated-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  .animated-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .animated-button:hover {
+    background-color: #1b61c0; /* Darker blue on hover */
+    color: #ffffff;
+    box-shadow: 0 8px 15px rgba(35, 123, 231, 0.6);
+  }
+  
+  .animated-button:active {
+    transform: translateY(2px); /* Button press effect */
+  }
+  .dugme {
+    margin-top: 20px;
+    background-color: #237be7;
+    border-color: #237be7;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.25rem;
+    /* border-radius: 30px; */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    box-shadow: 0 5px 15px rgba(35, 123, 231, 0.4); /* Add shadow for depth */
+  }
+ 
+  .hero .dugme:hover {
+    transform: scale(1.1); /* Button grows slightly */
+    background-color: #1a65b4; /* Darken the background color on hover */
+  }
+  
+  .hero .dugme:active {
+    transform: scale(0.95); /* Slight shrink when clicked */
+  }
+  
+  /* Adding a subtle animation */
+  .hero .dugme {
+    animation: pulse 2s infinite;
+  }
+ 
+ 
+ /* IGRICA U JAVASCRIPT*/
+ html,
+ body {
+   height: 100%;
+   margin: 0;
+ }
+ 
+ body {
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   cursor: pointer;
+ }
+ 
+ .container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+ }
+ 
+ #score {
+   position: absolute;
+   top: 100px;
+   right: 30px;
+   font-size: 2em;
+   font-weight: 900;
+   color: #237BE7;
+ }
+ 
+ #introduction {
+   width: 200px;
+   height: 150px;
+   position: absolute;
+   font-weight: 600;
+   font-size: 0.8em;
+   color: #237BE7;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   text-align: center;
+   transition: opacity 2s;
+ }
+ 
+ #restart {
+   width: 120px;
+   height: 120px;
+   position: absolute;
+   border-radius: 50%;
+   color: white;
+   background-color: red;
+   border: none;
+   font-weight: 700;
+   font-size: 1.2em;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   display: none;
+   cursor: pointer;
+ }
+ 
+ #perfect {
+   position: absolute;
+   opacity: 0;
+   transition: opacity 2s;
+ }
