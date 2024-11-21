@@ -72,54 +72,103 @@
 <!-- Interactive Examples Section -->
 <section class="interactive-examples">
     <div class="container">
-        <h2>Interaktivni Primeri</h2>
-        <p>See JavaScript in action with Animation control.</p>
-        
-        <div class="row">
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
-            </div>
+        <h2>Interaktivni Primeri Animacija</h2>
+        <p>Otkrij moć JavaScript animacija kroz ove primere.</p>
 
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
-            </div>
+        <!-- Primer 1: Animacija Pokreta -->
+        <div class="row mb-4">
+            <!-- Opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <small>Primer 1</small>
+                    <h3>Animacija Pokreta</h3>
+                    <p>Klikni na dugme ispod da pokreneš loptu koja se pomera po ekranu.</p>
+                    <button class="btn btn-primary" onclick="startAnimation()">Pokreni</button>
                 </div>
             </div>
+            <!-- Prikaz primera -->
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <div id="ball" style="width: 50px; height: 50px; background-color: red; border-radius: 50%; position: relative;"></div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Primer 2: Fade-in i Fade-out -->
+        <div class="row mb-4">
+            <!-- Opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <small>Primer 2</small>
+                    <h3>Fade-in i Fade-out</h3>
+                    <p>Klikni na dugme da postepeno prikažeš i sakriješ tekst koristeći JavaScript.</p>
+                    <button class="btn btn-primary" onclick="fadeInText()">Fade In</button>
+                    <button class="btn btn-secondary" onclick="fadeOutText()">Fade Out</button>
                 </div>
             </div>
+            <!-- Prikaz primera -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <p id="fade-text" style="opacity: 0; transition: opacity 2s;">Ovo je fade-in i fade-out animacija!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Primer 3: Skaliranje elementa -->
+        <div class="row mb-4">
+            <!-- Opis primera -->
+            <div class="col-md-6 example-card">
+                <div class="example-content">
+                    <small>Primer 3</small>
+                    <h3>Skaliranje Elementa</h3>
+                    <p>Klikni na dugme ispod da uvećaš kvadrat pomoću JavaScript animacije.</p>
+                    <button class="btn btn-primary" onclick="scaleElement()">Uvećaj</button>
+                </div>
+            </div>
+            <!-- Prikaz primera -->
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <div id="square" style="width: 100px; height: 100px; background-color: blue; margin: 20px;"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+         // Primer 1: Animacija Pokreta
+                function startAnimation() {
+                    const ball = document.getElementById("ball");
+                    let position = 0;
+                    const interval = setInterval(() => {
+                        if (position >= 500) {
+                            clearInterval(interval);
+                        } else {
+                            position++;
+                            ball.style.left = position + "px";
+                        }
+                    }, 5);
+                }
+
+        // Primer 2: Fade-in i Fade-out
+        function fadeInText() {
+            const text = document.getElementById("fade-text");
+            text.style.opacity = "1";
+        }
+
+        function fadeOutText() {
+            const text = document.getElementById("fade-text");
+            text.style.opacity = "0";
+        }
+
+        // Primer 3: Skaliranje Elementa
+        function scaleElement() {
+            const square = document.getElementById("square");
+            square.style.transition = "transform 2s";
+            square.style.transform = "scale(2)";
+        }
+
+</script>
 
 <!-- Footer Section -->
 <footer class="footer">

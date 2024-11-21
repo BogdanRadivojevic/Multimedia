@@ -73,53 +73,91 @@
 <section class="interactive-examples">
     <div class="container">
         <h2>Interaktivni Primeri</h2>
-        <p>See JavaScript in action with YouTube Video control.</p>
-        
-        <div class="row">
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
-            </div>
+        <p>Otkrijte kako JavaScript može kontrolisati YouTube video sadržaj koristeći YouTube IFrame API.</p>
 
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
-            </div>
+        <!-- Primer 1: Kontrola Reprodukcije -->
+        <div class="row mb-4">
+            <!-- Opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <small>Primer 1</small>
+                    <h3>Kontrola Reprodukcije</h3>
+                    <p>Klikni na dugmad da reprodukuješ ili pauziraš YouTube video koristeći JavaScript.</p>
+                    <button class="btn btn-success" onclick="playVideo()">Play</button>
+                    <button class="btn btn-danger" onclick="pauseVideo()">Pause</button>
                 </div>
             </div>
+            <!-- Prikaz primera -->
+            <div class="col-md-6 example-placeholder">
+                <div class="placeholder-content">
+                    <div id="youtube-player1"></div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Primer 2: Promena Jačine Zvuka -->
+        <div class="row mb-4">
+            <!-- Opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <small>Primer 2</small>
+                    <h3>Promena Jačine Zvuka</h3>
+                    <p>Koristi slider da promeniš jačinu zvuka YouTube videa u realnom vremenu.</p>
+                    <input type="range" min="0" max="100" value="50" onchange="setVolume(this.value)">
                 </div>
             </div>
+            <!-- Prikaz primera -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                    <div id="youtube-player2"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player1, player2;
+
+        // Inicijalizacija YouTube IFrame API-ja
+        function onYouTubeIframeAPIReady() {
+            player1 = new YT.Player('youtube-player1', {
+                height: '360',
+                width: '640',
+                videoId: '7q7wAABkdaQ&t=50s', // Zameni ID videa po želji
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            });
+
+            player2 = new YT.Player('youtube-player2', {
+                height: '360',
+                width: '640',
+                videoId: 'dQw4w9WgXcQ', // Zameni ID videa po želji
+            });
+        }
+
+        // Pokreće video kada je spreman
+        function onPlayerReady(event) {
+            console.log('Player is ready!');
+        }
+
+        // Kontrola za reprodukciju i pauzu (Primer 1)
+        function playVideo() {
+            player1.playVideo();
+        }
+
+        function pauseVideo() {
+            player1.pauseVideo();
+        }
+
+        // Promena jačine zvuka (Primer 2)
+        function setVolume(volume) {
+            player2.setVolume(volume);
+        }
+    </script>
+
 
 <!-- Footer Section -->
 <footer class="footer">
