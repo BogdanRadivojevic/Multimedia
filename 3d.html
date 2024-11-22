@@ -70,57 +70,156 @@
     </div>
 </section>
 
-<!-- Interactive Examples Section -->
-<section class="interactive-examples">
-    <div class="container">
-        <h2>Interaktivni Primeri</h2>
-        <p>See JavaScript in action with 3D Graphics control.</p>
-        
-        <div class="row">
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+
+    <!-- Interactive Examples Section -->
+    <section class="interactive-examples">
+        <div class="container">
+            <h2>Interaktivni Primeri sa 3D Grafikom</h2>
+            <p>Otkrijte osnovne mogućnosti Three.js za rad sa 3D grafikama.</p>
+
+            <!-- Primer 1: Osnovna kocka -->
+            <div class="row mb-4">
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 1</small>
+                        <h3>Osnovna Kocka</h3>
+                        <p>Prikaz osnovne 3D kocke pomoću Three.js biblioteke.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <div id="basic-cube" style="width: 100%; height: 300px;"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
+            <!-- Primer 2: Animirana kocka -->
+            <div class="row mb-4">
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 2</small>
+                        <h3>Animirana Kocka</h3>
+                        <p>Rotacija kocke u realnom vremenu pomoću JavaScript animacije.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <div id="animated-cube" style="width: 100%; height: 300px;"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-6 example-card">
-                <div class="example-content">
-                    <small>primer 1</small>
-                    <h3>Naziv primera</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
+            <!-- Primer 3: Kugla sa teksturom -->
+    <div class="row mb-4">
+        <div class="col-md-6 example-card">
+            <div class="example-content">
+                <small>Primer 3</small>
+                <h3>Kugla sa Teksturom</h3>
+                <p>Kugla koja se rotira, sa teksturom mape planete Zemlje.</p>
             </div>
-            <div class="col-md-6 example-placeholder">
-                <div class="placeholder-content">
-                    <h3>ZADATAK/PRIMER</h3>
-                </div>
+        </div>
+        <div class="col-md-6 example-placeholder">
+            <div class="placeholder-content">
+                <div id="textured-sphere" style="width: 100%; height: 300px;"></div>
             </div>
         </div>
     </div>
-</section>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Primer 1: Osnovna Kocka
+        const basicCube = () => {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth / 2, 300);
+            document.getElementById("basic-cube").appendChild(renderer.domElement);
+
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            camera.position.z = 5;
+            renderer.render(scene, camera);
+        };
+
+        // Primer 2: Animirana Kocka
+        const animatedCube = () => {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth / 2, 300);
+            document.getElementById("animated-cube").appendChild(renderer.domElement);
+
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            camera.position.z = 5;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            }
+            animate();
+        };
+
+        // Inicijalizacija primera
+        document.addEventListener("DOMContentLoaded", () => {
+            basicCube();
+            animatedCube();
+        });
+
+        // Primer 3: Kugla sa teksturom
+            const texturedSphere = () => {
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer();
+                renderer.setSize(window.innerWidth / 2, 300);
+                document.getElementById("textured-sphere").appendChild(renderer.domElement);
+
+                // Dodavanje svetla
+                const light = new THREE.PointLight(0xffffff, 1, 100);
+                light.position.set(10, 10, 10);
+                scene.add(light);
+
+                // Tekstura za kuglu
+                const textureLoader = new THREE.TextureLoader();
+                const earthTexture = textureLoader.load(
+                    "https://threejsfundamentals.org/threejs/resources/images/earth.jpg"
+                );
+
+                // Kreiranje kugle sa teksturom
+                const geometry = new THREE.SphereGeometry(1, 32, 32);
+                const material = new THREE.MeshStandardMaterial({ map: earthTexture });
+                const sphere = new THREE.Mesh(geometry, material);
+                scene.add(sphere);
+
+                camera.position.z = 5;
+
+                // Animacija rotacije
+                function animate() {
+                    requestAnimationFrame(animate);
+                    sphere.rotation.y += 0.01; // Rotacija po Y osi
+                    renderer.render(scene, camera);
+                }
+                animate();
+            };
+
+            // Inicijalizacija kugle
+            document.addEventListener("DOMContentLoaded", () => {
+                texturedSphere();
+            });
+
+    </script>
+
+
 
 <!-- Footer Section -->
 <footer class="footer">

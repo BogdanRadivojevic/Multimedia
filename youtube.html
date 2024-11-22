@@ -72,90 +72,84 @@
 <!-- Interactive Examples Section -->
 <section class="interactive-examples">
     <div class="container">
-        <h2>Interaktivni Primeri</h2>
-        <p>Otkrijte kako JavaScript može kontrolisati YouTube video sadržaj koristeći YouTube IFrame API.</p>
+        <h2>Interaktivni Primeri sa YouTube Videima</h2>
+        <p>Otkrijte kako možete da koristite JavaScript za interakciju sa ugrađenim YouTube videima.</p>
 
-        <!-- Primer 1: Kontrola Reprodukcije -->
+        <!-- Primer 1: Prikazivanje i Sakrivanje Vide -->
         <div class="row mb-4">
             <!-- Opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
                     <small>Primer 1</small>
-                    <h3>Kontrola Reprodukcije</h3>
-                    <p>Klikni na dugmad da reprodukuješ ili pauziraš YouTube video koristeći JavaScript.</p>
-                    <button class="btn btn-success" onclick="playVideo()">Play</button>
-                    <button class="btn btn-danger" onclick="pauseVideo()">Pause</button>
+                    <h3>Prikazivanje i Sakrivanje Vide</h3>
+                    <p>Klikni na dugmad da prikažeš ili sakriješ ugrađeni YouTube video.</p>
+                    <button class="btn btn-primary" onclick="showVideo()">Prikaz</button>
+                    <button class="btn btn-secondary" onclick="hideVideo()">Sakrij</button>
                 </div>
             </div>
             <!-- Prikaz primera -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <div id="youtube-player1"></div>
+                    <div id="video-container" style="display: block;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7q7wAABkdaQ" 
+                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Primer 2: Promena Jačine Zvuka -->
+        <!-- Primer 2: Promena Veličine Vide -->
         <div class="row mb-4">
             <!-- Opis primera -->
             <div class="col-md-6 example-card">
                 <div class="example-content">
                     <small>Primer 2</small>
-                    <h3>Promena Jačine Zvuka</h3>
-                    <p>Koristi slider da promeniš jačinu zvuka YouTube videa u realnom vremenu.</p>
-                    <input type="range" min="0" max="100" value="50" onchange="setVolume(this.value)">
+                    <h3>Promena Veličine Vide</h3>
+                    <p>Klikni na dugmad da promeniš veličinu ugrađenog YouTube videa.</p>
+                    <button class="btn btn-success" onclick="resizeVideo('large')">Veliko</button>
+                    <button class="btn btn-warning" onclick="resizeVideo('small')">Malo</button>
                 </div>
             </div>
             <!-- Prikaz primera -->
             <div class="col-md-6 example-placeholder">
                 <div class="placeholder-content">
-                    <div id="youtube-player2"></div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/UV0mhY2Dxr0?si=SYCtxkFVsKuw7liJ" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
+
+   
+
     <script>
-        let player1, player2;
+             // Prikazivanje i sakrivanje videa
+            function showVideo() {
+                const videoContainer = document.getElementById('video-container');
+                videoContainer.style.display = 'block';
+            }
 
-        // Inicijalizacija YouTube IFrame API-ja
-        function onYouTubeIframeAPIReady() {
-            player1 = new YT.Player('youtube-player1', {
-                height: '360',
-                width: '640',
-                videoId: '7q7wAABkdaQ&t=50s', // Zameni ID videa po želji
-                events: {
-                    'onReady': onPlayerReady,
+            function hideVideo() {
+                const videoContainer = document.getElementById('video-container');
+                videoContainer.style.display = 'none';
+            }
+
+            // Promena veličine videa
+                function resizeVideo(size) {
+                    const video = document.getElementById('resizable-video');
+                    if (size === 'large') {
+                        video.width = 800;
+                        video.height = 450;
+                    } else if (size === 'small') {
+                        video.width = 320;
+                        video.height = 180;
+                    }
                 }
-            });
 
-            player2 = new YT.Player('youtube-player2', {
-                height: '360',
-                width: '640',
-                videoId: 'dQw4w9WgXcQ', // Zameni ID videa po želji
-            });
-        }
-
-        // Pokreće video kada je spreman
-        function onPlayerReady(event) {
-            console.log('Player is ready!');
-        }
-
-        // Kontrola za reprodukciju i pauzu (Primer 1)
-        function playVideo() {
-            player1.playVideo();
-        }
-
-        function pauseVideo() {
-            player1.pauseVideo();
-        }
-
-        // Promena jačine zvuka (Primer 2)
-        function setVolume(volume) {
-            player2.setVolume(volume);
-        }
     </script>
 
 
